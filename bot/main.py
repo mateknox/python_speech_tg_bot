@@ -7,7 +7,7 @@ recognition = sr.Recognizer()
 bot = telebot.TeleBot(TOKEN)
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start', 'help'])
 def start_message(message):
     logging.info(f"Got a start msg: ${message}")
     bot.send_message(message.chat.id, 'Bot for speech to text translation. Send voice to start the process.',
